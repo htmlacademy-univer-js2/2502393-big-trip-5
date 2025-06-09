@@ -9,6 +9,8 @@ const POINTS_COUNT = 5;
 const MAX_PRICE_VALUE = 200;
 const MAX_IMAGES_COUNT = 5;
 
+const DESTINATIONS_NAMES_MAX_COUNT = 3;
+
 const AUTH_TOKEN = 'Basic dXNlckBwYXNzd29yZAo=';
 const API_HOST = 'https://21.objects.htmlacademy.pro/big-trip';
 
@@ -173,8 +175,6 @@ const UiBlockerLimit = {
   LOWER: 250,
   UPPER: 1000,
 };
-
-const DESTINATIONS_NAMES_MAX_COUNT = 3;
 
 
 export {
