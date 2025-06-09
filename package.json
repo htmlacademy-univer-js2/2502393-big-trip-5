@@ -29,5 +29,11 @@
   },
   "engines": {
     "node": "20"
+  },
+  "dependencies": {
+    "css-loader": "^7.1.2",
+    "dayjs": "^1.11.13",
+    "flatpickr": "^4.6.13",
+    "style-loader": "^4.0.0"
   }
 }
