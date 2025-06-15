@@ -51,12 +51,25 @@ export default class TripInfoView extends AbstractView {
 
   get template() {
     const isEmpty = this.#points.length === 0;
+    if (isEmpty) {
+      return createTripInfoTemplate({
+        isEmpty: true,
+        isLoading: this.#isLoading,
+        routeLabel: null,
+        periodLabel: null,
+        cost: null,
+      });
+    }
+    const routeLabel = getRouteLabel(this.#points, this.#destinations);
+    const periodLabel = getDurationPeriod(this.#points);
+    const cost = getTotalPointsCost(this.#points, this.#offers);
+
     return createTripInfoTemplate({
-      isEmpty,
+      isEmpty : false,
       isLoading: this.#isLoading,
-      routeLabel: isEmpty ? null : getRouteLabel(this.#points, this.#destinations),
-      periodLabel: isEmpty ? null : getDurationPeriod(this.#points),
-      cost: isEmpty ? null : getTotalPointsCost(this.#points, this.#offers),
+      routeLabel,
+      periodLabel,
+      cost,
     });
   }
 }
